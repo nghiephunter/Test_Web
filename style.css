@@ -479,6 +479,8 @@ header > .container > ul > li:not(:first-child) > a:hover{
 }
 
 
+
+
 .contact{
 	margin-bottom: 100px;
 }
@@ -496,11 +498,15 @@ header > .container > ul > li:not(:first-child) > a:hover{
 	background: url(image/map/map.jpg) no-repeat center center;
 	background-size: cover;
 	height: 319px;
+	width: 100%;
 	margin-bottom: 60px;
 }
 
+.contact div > div.container{
+	display: flex;
+}
 .contact div > div.container > div{
-	max-width: 50%;
+	width: calc((100% - 20px) /2);
 }
 
 .contact div .container div h4{
@@ -516,16 +522,18 @@ header > .container > ul > li:not(:first-child) > a:hover{
 	line-height: 26px;
 	margin-bottom: 35px;
 	color: #8d8f92;
+	padding-right: 20px;
 }
-.contact  div > div{
+.contact > div > div{
 	position: relative;
 }
 .contact div > div > form{
 	background: white;
 	position: absolute;
 	top: -190px;
-	right: 0px;
+	right: 0;
 	padding: 30px 30px 25px 30px;
+	width: 50%;
 }
 
 form > div label{
@@ -594,16 +602,17 @@ form button:hover{
 
 
 footer{
-	height: 96px;
 	background-color: #3a454d;
+	height: 95px;
 }
 footer > div{
 	display: flex;
 	justify-content: space-between;
 }
 footer p {
+	font-size: 14px;
+	line-height: 95px;
 	display: inline-block;
-	line-height: 96px;
 	color: white;
 }
 footer ul{
@@ -637,6 +646,9 @@ footer ul li:nth-child(4){
 footer ul li:nth-child(5){
 	background: url(image/social-icons/in.png) no-repeat center center;
 }
+
+
+
 
 /**responsive**/
 @media screen and (max-width: 960px){
@@ -672,10 +684,36 @@ footer ul li:nth-child(5){
 	header .container{
 		display: block;
 	}
+	header .container ul{
+		text-align: center;
+	}
+.contact div > div.container{
+		display: block;
+	}
+.contact div .container div p, 
+.contact div .container div h4{
+		text-align: center;
+	}
+
+.contact div > div.container > div {
+	    width: 100%;
+	}
+.contact div > div > form {
+	    position: relative;
+	    top: 0;
+	    right: 0;
+	    width: 100%;
+	}
+.contact {
+	    margin-bottom: 30px;
+	}
 }
 @media screen and (max-width: 768px){
 	header{
 		line-height: 60px;
+	}
+	header .container ul{
+		text-align: center;
 	}
 	#hero .container {
         padding-top: 150px;
@@ -749,15 +787,134 @@ footer ul li:nth-child(5){
 #features > .container > div > div p{
 	    text-align: center;
 	}
+.contact div > div.container{
+	display: block;
+}
+.contact div .container div p, 
+.contact div .container div h4{
+	text-align: center;
+}
+
 .contact div > div.container > div {
-	    max-width: 100%;
+	    width: 100%;
 	}
 .contact div > div > form {
 	    position: relative;
 	    top: 0;
 	    right: 0;
+	    width: 100%;
 	}
 .contact {
 	    margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 635px){
+	footer{
+		height: auto;
+	}
+	footer > div {
+	    display: block;
+	}
+	footer p {
+	    line-height: 60px;
+	    display: block;
+	    text-align: center;
+	    color: white;
+	}
+	footer ul {
+	    display: flex;
+	    justify-content: center;
+	    padding-bottom: 15px;
+	}
+}
+@media screen and (max-width: 500px){
+	#hero {
+	    height: 450px;
+	}
+	#hero .container {
+	    padding-top: 50px;
+	}
+	#about .container #contain-right p {
+	    margin-left: 0;
+	    text-align: center;
+	}
+	#about .container #contain-right h3 {
+	    text-align: center;
+	}
+	#about .container #contain-right ol li:before{
+		display: none;
+	}
+	#about .container {
+	    margin-bottom: 20px;
+	}
+	#about .container #contain-left {
+	    margin-bottom: 20px;
+	}
+	#team {
+	    margin-bottom: 30px;
+	}
+	#team h2 {
+	    margin-top: 30px;
+	    margin-bottom: 20px;
+	}
+	.list-person {
+		display: block;
+    }
+    .list-person > div {
+	    width: 100%;
+	}
+	#team .list-person > div > div > .mask,
+	#team .list-person > div:hover > div > .mask {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    display: flex;
+	    justify-content: center;
+	    align-items: flex-end;
+	}
+	#work > .container > h4 {
+	    padding-left: 16px;
+	    margin-bottom: 20px;
+	}
+	#work > .container > div {
+	    display: block;
+	    text-align: center;
+	}
+	#work > .container > div > div{
+	    width: 100%;
+	}
+	#work > .container > div > div > img {
+	    width: 100%;
+	}
+	.mask {
+	    display: block;
+	}
+	#work > .container > div > div > a img {
+        display: block;
+ 	}
+ 	#work > .container > div > div > img {
+	    opacity: 0.7;
+ 	}
+ 	#service {
+	    padding-top: 30px;
+	}
+	#service h2{
+	    padding-bottom: 10px;
+	    margin-bottom: 50px;
+	}
+	#service ul {
+	    display: block;
+	}
+	#service > ul > li {
+	    width: 100%;
+	    margin-bottom: 20px;
+	}
+	#service > ul > li > h4 {
+	    margin-bottom: 10px;
+	}
+	#service > ul > li > div {
+	    margin-bottom: 10px;
 	}
 }
